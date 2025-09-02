@@ -1,0 +1,137 @@
+/* Estilos modernos y responsivos para MainLayout */
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6fb;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: auto; /* allow flex children to size naturally */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+.sidebar {
+  width: 220px;
+  background: linear-gradient(135deg, #007bff 60%, #00c6ff 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 0 0;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.sidebar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 1.4rem 0;
+  letter-spacing: 1px;
+  padding-left: 12px;
+  align-self: flex-start;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+}
+.sidebar-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 24px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.sidebar-nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  background: #f4f6fb;
+}
+.header {
+  background: #fff;
+  padding: 18px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 160px); /* leave room for logout */
+}
+
+.logout-btn {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 16px;
+}
+.logout-btn:hover {
+  background: #b71c1c;
+}
+.content-area {
+  flex: 1;
+  padding: 32px;
+  background: #f4f6fb;
+}
+.footer {
+  background: #fff;
+  padding: 16px 32px;
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    min-height: unset;
+    padding: 0 12px;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+  }
+  .sidebar-logo {
+    margin: 0 1rem;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-right: 1rem;
+  }
+  .main-content {
+    min-height: calc(100vh - 80px);
+    width: auto;
+  }
+}
